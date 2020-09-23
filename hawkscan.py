@@ -3,7 +3,7 @@
 
 #modules in standard library
 import requests
-import sys, os, re
+import sys, os, re, platform
 import time
 from time import strftime
 import argparse
@@ -13,7 +13,7 @@ import traceback
 from requests.exceptions import Timeout
 
 # external modules
-if "Linux" in "{}".format(os.popen('cat /etc/services').read()):
+if "Linux" in "{}".format(platform.system()):
     import dryscrape
 else:
     print("{} webengine for MacOs coming soon".format(INFO))
